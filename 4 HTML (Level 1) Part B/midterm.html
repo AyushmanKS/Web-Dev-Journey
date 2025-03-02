@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Example</title>
+</head>
+<body>
+    <script>
+        document.write("<table border='1'>");
+        document.write("<tr><th>Number</th><th>Square</th><th>Cube</th></tr>");
+
+        for(var i = 6; i <= 11; i++) {
+            var square = i * i;
+            var cube = i * i * i;
+            document.write("<tr><td>" + i + "</td><td>" + square + "</td><td>" + cube + "</td></tr>");
+        }
+
+        document.write("</table>");
+    </script>
+</body>
+</html>
