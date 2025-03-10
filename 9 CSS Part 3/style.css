@@ -1,0 +1,14 @@
+div {
+    height: 120px;
+    width: 500px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: pink;
+
+    padding: 5px;
+
+    border-radius: 20px;
+
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
