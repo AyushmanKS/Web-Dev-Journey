@@ -1,0 +1,51 @@
+* {
+    font-family: "Verdana";
+}
+
+h3 {
+    color: green;
+}
+
+h2 {
+    color: grey;
+}
+
+#login {
+    background-color: white;
+}
+
+#signup {
+    background-color: rgb(199, 123, 123);
+    color: white;
+}
+
+.upvote {
+    background-color: yellow;
+    color: red;
+}
+
+p a {
+    color: orange;
+}
+
+p + h3 {
+    text-decoration: underline;
+}
+
+.upvote + button {
+    background-color: lightblue;
+}
+
+div > input {
+    background-color: darkkhaki;
+}
+
+button:hover {
+    background-color: black;
+    color: white;
+}
+
+h1::first-letter {
+    color: pink;
+}
+
