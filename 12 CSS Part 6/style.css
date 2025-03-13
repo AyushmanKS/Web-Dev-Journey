@@ -1,0 +1,49 @@
+.container {
+    width: 600px;
+    height: 100px;
+    background-color: black;
+    display: grid;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    grid-template-columns: 100px 100px 100px 100px 100px;
+}
+
+.item {
+    width: 80px;
+    height: 80px;
+    background-color: greenyellow;
+    border: 2px solid black;
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    background-color: lightgrey;
+    border-radius: 10px;
+
+    animation-name: fontAnimation, paddingAnimation;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0;
+    animation-iteration-count: 5;
+
+}
+
+@keyframes fontAnimation {
+    from {
+        font-size: 20px;
+    }
+    to {
+        font-size: 40px
+    }
+}
+
+@keyframes paddingAnimation {
+    from {
+        padding: 10px;
+    }
+    to {
+        padding: 40px
+    }
+}
