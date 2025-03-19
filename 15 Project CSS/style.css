@@ -63,3 +63,35 @@ a {
     background-color: #121212;
     margin-left: 1rem;
 }
+
+.library {
+    background-color: #121212;
+    border-radius: 1rem;
+    height: 100%;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0.75rem;
+}
+.lib-option img {
+    background-color: #121212;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.options {
+    background-color: #121212;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.icons {
+    font-size: 1.2rem;
+    display: flex;
+    background-color: #121212;
+}
+.icons i {
+    opacity: 0.7;
+    margin-right: 1rem;
+    background-color: #121212;
+}
+.icons i:hover {
+    opacity: 1;
+}
