@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Animal Image Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #0077b6;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        #iconImg {
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        #iconImg:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Random Image Generator</h1>
+    <p>Click the image to display a new random animal:</p>
+    <img id="iconImg" src="Animal1.jpg" alt="Animal 1" width="250" height="250">
+
+    <script>
+        var pictures = ["Animal1", "Animal2", "Animal3", "Animal4", "Animal5", "Animal6", "Animal7"];
+        var descriptions = ["Animal 1", "Animal 2", "Animal 3", "Animal 4", "Animal 5", "Animal 6", "Animal 7"];
+
+        function pickImage() {
+            var index = Math.floor(Math.random() * pictures.length);
+            iconImg.setAttribute("src", pictures[index] + ".jpg");
+            iconImg.setAttribute("alt", descriptions[index]);
+        }
+
+        var iconImg = document.getElementById("iconImg");
+        iconImg.addEventListener("click", pickImage, false);
+    </script>
+
+</body>
+</html>

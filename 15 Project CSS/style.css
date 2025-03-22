@@ -9,10 +9,11 @@
 .main {
     display: flex;
     height: 100vh;
+    padding: 0.5rem;
 }
 
 .sidebar {
-    background-color: yellow;
+    background-color: black;
     width: 340px;
     border-radius: 1rem;
 }
@@ -72,7 +73,6 @@ a {
     padding: 0.5rem 0.75rem;
 }
 .lib-option img {
-    background-color: #121212;
     height: 1.5rem;
     width: 1.5rem;
 }
@@ -94,4 +94,20 @@ a {
 }
 .icons i:hover {
     opacity: 1;
+}
+
+.box {
+    background-color: #232323;
+    height: 8rem;
+    border-radius: 0.75rem;
+    margin: 0.5rem 0 0.05rem 0;
+}
+.box-p1 {
+    background-color: #232323;
+    font-size: 1rem;
+}
+.box-p2 {
+    background-color: #232323;
+    font-size: 0.75rem;
+    opacity: 0.75;
 }
