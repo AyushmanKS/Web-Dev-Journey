@@ -13,21 +13,18 @@
 }
 
 .sidebar {
-    background-color: black;
     width: 340px;
     border-radius: 1rem;
-    margin-right: 0.5rem;
+    margin-right: 0.75rem;
 }
 
 .main-content {
-    background-color: #121212;
     flex: 1;
     border-radius: 1rem;
     overflow: auto;
 }
 
 .music-player {
-    background-color: black;
     position: fixed;
     bottom: 0px;
     width: 100%;
@@ -126,4 +123,77 @@ a {
     height: 2rem;
     border: none;
     cursor: pointer;
+}
+
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;    
+    background-color: #121212;
+}
+.sticky-nav-icons{
+    margin-left: 1rem;
+    background-color: #121212;
+}
+.sticky-nav-icons img{
+    font-size: 2rem;
+    background-color: #121212;
+}
+.sticky-nav-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.75rem;
+    background-color: #121212;
+}
+.nav-item {
+    margin-right: 1rem;
+}
+.dark-badge {
+    background-color: black;
+    color: white;
+    align-items: center;
+    display: flex;            
+    justify-content: center;  
+    padding: 1rem 1rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    height: 2rem;
+    border: none;
+    cursor: pointer;
+}
+.main-content .cards {
+    background-color: #121212;
+}
+.sticky-nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.circle {
+    width: 30px; 
+    height: 30px; 
+    background-color: black;
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle img {
+    width: 20px; 
+    height: 20px;
+    background-color: black;
+}
+
+
+@media(max-width: 1000px) {
+    .hide {
+        display: none;
+    }
 }
