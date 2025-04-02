@@ -1,5 +1,5 @@
-let btn = document.querySelector("button");
-console.dir(btn);
+// let btn = document.querySelector("button");
+// console.dir(btn);
 
 // btn.onclick = function () {
 //     console.log("Button was clicked");
@@ -10,8 +10,13 @@ console.dir(btn);
 //     console.log("Hovering over button!");
 // }
 
-btn.addEventListener('click', sayHello);
+// btn.addEventListener('click', sayHello);
 
-function sayHello() {
-    alert("Hello !");
-}
+// function sayHello() {
+//     alert("Hello !");
+// }
+
+let inp = document.querySelector("input");
+inp.addEventListener("keydown", function() {
+    console.log("key pressed");
+});
