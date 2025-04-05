@@ -48,16 +48,15 @@ function checkAns(idx) {
         }
     } else {
         h2.innerText = `Game over! Press any key to start again.`;
+        reset();
     }
 }
 
 function btnPress() {
-    console.log(`${this} button was pressed`);
     let btn = this;
     userFlash(btn);
 
     userColor = btn.getAttribute("id");
-    console.log(`-------------------------------------${userColor}`);
     userSeq.push(userColor);
 
     checkAns(userSeq.length-1);
@@ -66,4 +65,11 @@ function btnPress() {
 let allBtns = document.querySelectorAll(".btn");
 for(btn of allBtns) {
     btn.addEventListener("click", btnPress);
+}
+
+function reset() {
+    started = false;
+    gameSeq = [];
+    userSeq = [];
+    level = 0;
 }
