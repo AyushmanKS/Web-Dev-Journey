@@ -24,3 +24,25 @@ setColor("red",1000, ()=> {
         });
     });
 });
+
+function saveToDb(data, success, failure) {
+    let internetSpeed = Math.floor(Math.random() * 10) + 1;
+    if(internetSpeed > 4) {
+        success();
+    }
+    else {
+        failure();
+    }
+}
+
+saveToDb("Ayushman",()=>{
+    h1.innerText = "Data saved";
+    saveToDb("Second success data",()=>{
+        h1.innerText = "Second success data";
+    },()=>{
+        h1.innerText = "Data failed second time";
+    });
+    },
+    ()=>{
+        h1.innerText = "Not saved. check your internet speed and try again";
+});
