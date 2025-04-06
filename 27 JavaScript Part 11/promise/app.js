@@ -27,8 +27,13 @@ function saveToDb(data) {
     });
 }
 
-saveToDb("Ayushman").then(()=>{
-    console.log("promise was resolved");
+saveToDb("Ayushman")
+.then(()=>{
+    console.log("Data 1 saved");
+    return saveToDb("Ayushman");
+})
+.then(()=>{
+    console.log("Data 2 saved");
 })
 .catch(()=>{
     console.log("promise was rejected");
