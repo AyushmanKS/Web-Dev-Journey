@@ -26,3 +26,10 @@ function saveToDb(data) {
         }
     });
 }
+
+saveToDb("Ayushman").then(()=>{
+    console.log("promise was resolved");
+})
+.catch(()=>{
+    console.log("promise was rejected");
+});
