@@ -28,13 +28,16 @@ function saveToDb(data) {
 }
 
 saveToDb("Ayushman")
-.then(()=>{
+.then((result)=>{
     console.log("Data 1 saved");
+    console.log("result of promise: ",result);
     return saveToDb("Ayushman");
 })
-.then(()=>{
+.then((result)=>{
     console.log("Data 2 saved");
+    console.log("result of promise: ",result);
 })
-.catch(()=>{
+.catch((result)=>{
     console.log("promise was rejected");
+    console.log("result of promise: ",result);
 });
