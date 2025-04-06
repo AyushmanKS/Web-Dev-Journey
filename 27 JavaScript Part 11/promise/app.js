@@ -1,18 +1,26 @@
 let h1 = document.querySelector("h1");
 
-function setColor(color, delay, nextColorChange) {
-    setTimeout(()=>{
-        h1.style.color = color;
-        if(nextColorChange) nextColorChange();
-    }, delay);
+function setColor(color, delay) {
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            h1.style.color = color;
+            resolve("color changed");
+        }, delay);
+    });
 }
 
-setColor("red",1000, ()=> {
-    setColor("blue",1000, ()=>{
-        setColor("purple",1000, ()=>{
-            setColor("yellow",1000);   
-        });
-    });
+setColor("red",1000)
+.then(()=>{
+    return setColor("yellow",1000);
+})
+.then(()=>{
+    return setColor("purple",1000);
+})
+.then(()=>{
+    return setColor("blue",1000);
+})
+.catch(()=>{
+    console.log("color change rejecetd");
 });
 
 function saveToDb(data) {
