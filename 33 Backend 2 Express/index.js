@@ -13,3 +13,11 @@ app.use((req, res)=> {
     console.log("request received");
     res.send("this is a basic response");
 });
+
+app.get('/',(req, res)=> {
+    res.send("you contacted root path");
+});
+
+app.get('/apple',(req, res)=> {
+    res.send("you contacted apple path");
+});
