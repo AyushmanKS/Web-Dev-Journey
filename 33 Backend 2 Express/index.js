@@ -21,3 +21,7 @@ app.get('/',(req, res)=> {
 app.get('/apple',(req, res)=> {
     res.send("you contacted apple path");
 });
+
+app.get('*',(req, res)=> {
+    res.send("this path does not exist");
+});
