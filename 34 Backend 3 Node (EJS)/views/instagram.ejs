@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
-</head>
+</head> -->
+<%- include("includes/head.ejs") %>
 <body>
     <h1>This page belongs to @<%= data.name %></h1>
     <h3>Followers</h3>
@@ -21,5 +22,7 @@
 
     <button>Follow</button>
     <button>Message</button>
+
+    <%- include("includes/footer.ejs") %>
 </body>
 </html>
