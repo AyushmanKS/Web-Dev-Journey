@@ -7,6 +7,13 @@
 </head>
 <body>
     <h1>This page belongs to <%= username %></h1>
+    <h3>Followers</h3>
+    <ul>
+        <% for(let name of followers) { %>
+            <li> <%= name %> </li>
+        <% } %> 
+    
+    </ul>
     <button>Follow</button>
     <button>Message</button>
 </body>
