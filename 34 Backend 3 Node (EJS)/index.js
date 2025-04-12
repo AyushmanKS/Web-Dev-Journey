@@ -15,6 +15,11 @@ app.get('/hello',(req, res)=>{
     res.send("hello");
 });
 
+app.get('/rolldice',(req, res)=>{
+    let diceVal = Math.floor(Math.random() * 6) + 1;
+    res.render("rolldice.ejs",{num: diceVal});
+});
+
 app.listen(port, ()=> {
     console.log(`listening to port ${port}`);
 });
