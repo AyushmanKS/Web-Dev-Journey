@@ -25,3 +25,8 @@ app.get('/apple',(req, res)=> {
 app.get('*',(req, res)=> {
     res.send("this path does not exist");
 });
+
+app.get("/:username/:id", (res,req)=>{
+    let {username,id} = req.params;
+    req.send(`hello! welcome to the page if ${usernmae}.`);
+});
