@@ -33,7 +33,7 @@ app.get("/posts/new",(req,resp)=>{
 app.post("/posts",(req,resp)=>{
     let {username, content} = req.body;
     posts.push({username, content});
-    resp.send("post request working");
+    resp.redirect("/posts");
 });
 
 app.get("/posts",(req, resp)=>{
