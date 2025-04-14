@@ -13,14 +13,17 @@ const port = 8080;
 
 let posts = [
     {
+        id: "1a",
         username: "AyushmanKS",
         content: "I love coding!", 
     },
     {
+        id: "2b",
         username: "Aman",
         content: "I love playing soccer!", 
     },
     {
+        id: "3c",
         username: "Abhilasha",
         content: "I love doing UI/UX!", 
     }
@@ -34,6 +37,12 @@ app.post("/posts",(req,resp)=>{
     let {username, content} = req.body;
     posts.push({username, content});
     resp.redirect("/posts");
+});
+
+app.get("/posts/:id",(req,resp)=>{
+    let {id} = req.params;
+    let post = posts.find((p)=> id === p.id);
+    resp.render("show.ejs",{post});
 });
 
 app.get("/posts",(req, resp)=>{
