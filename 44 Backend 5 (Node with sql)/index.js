@@ -33,19 +33,7 @@ let getRandomUser = () => {
 //   data.push(getRandomUser());
 // }
 
-//   try {
-//     connection.query(q,[data], (err, result)=>{
-//     if(err) throw err;
-//     console.log(result);
-//     });
-//   } catch(err) {
-//     console.log(err);
-//   }
-
-// connection.end();
-
-// console.log(getRandomUser());
-
+// home page
 app.get('/',(req,res)=>{
   let q = `select count(*) from user`;
     try {
@@ -53,6 +41,20 @@ app.get('/',(req,res)=>{
     if(err) throw err;
     let total = result[0]["count(*)"];
     res.render("home.ejs",{total});
+      });
+    } catch(err) {
+      console.log(err);
+      res.send("Some error in fetching data!");
+    }
+});
+
+// show users
+app.get('/user',(req,res)=>{
+  let q = "select * from user";
+  try {
+    connection.query(q, (err, result)=>{
+    if(err) throw err;
+    res.render("showusers.ejs",{result});
       });
     } catch(err) {
       console.log(err);
