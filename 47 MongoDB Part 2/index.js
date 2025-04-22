@@ -19,15 +19,23 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model("User", userSchema);
 const Employee = mongoose.model("Employee", userSchema);
 
-const user1 = new User({name: "Ayushman", email: "ayushmanks1845@gmail.com", age: 21});
-user1.save().then((res)=>{
-    console.log(`user successfully saved: ${res}`)
-}).catch((err)=>{
-    console.log(`Error saving user: ${err}`);
-});
+// const user1 = new User({name: "Ayushman", email: "ayushmanks1845@gmail.com", age: 21});
+// user1.save().then((res)=>{
+//     console.log(`user successfully saved: ${res}`)
+// }).catch((err)=>{
+//     console.log(`Error saving user: ${err}`);
+// });
 
-User.find({age: {$gt: 20}}).then((res)=>{
+// User.find({age: {$gt: 20}}).then((res)=>{
+//     console.log(res);
+// }).catch((err)=>{
+//     console.log(err);
+// });
+
+User.updateOne({name: "Ayushman"}, {age: 40}).then((res)=>{
     console.log(res);
 }).catch((err)=>{
     console.log(err);
 });
+
+User.deleteMany({name: "Ayushman"});
