@@ -43,7 +43,7 @@ app.get("/chats/new", (req, res)=>{
 });
 
 //create route
-app.post("/chats", (req, res)=>{
+app.post("/chats", (req, res) => {
     let {from, to, msg} = req.body;
     let newChat = new Chat({
         from: from,
@@ -51,8 +51,13 @@ app.post("/chats", (req, res)=>{
         to: to,
         created_at: new Date()
     });
-    console.log(newChat);
-    res.send("Chat sent! working..:)")
+    newChat.save().then((savedChat) => {
+        console.log(`Chat sent successfully: ${savedChat}`);
+        res.redirect("/chats");
+    }).catch((err) => {
+        console.log(`Error occurred while sending chat: ${err}`);
+        res.status(500).send("Something went wrong while saving the chat.");
+    });
 });
 
 app.get("/",(req, res)=> {
