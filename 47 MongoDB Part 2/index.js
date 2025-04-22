@@ -25,3 +25,9 @@ user1.save().then((res)=>{
 }).catch((err)=>{
     console.log(`Error saving user: ${err}`);
 });
+
+User.find({age: {$gt: 20}}).then((res)=>{
+    console.log(res);
+}).catch((err)=>{
+    console.log(err);
+});
