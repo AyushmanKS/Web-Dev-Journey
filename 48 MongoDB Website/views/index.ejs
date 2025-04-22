@@ -19,6 +19,9 @@
                 <p><%= chat.msg %></p>
             </div>
             <p>Received by: <%= chat.to %></p>
+            <hr>
+            <p>Time: <%= chat.created_at.toString().split(" ")[4] %></p>
+            <p>Date: <%= chat.created_at.toString().split(" ").slice(0,4).join(" ") %></p>
         </div>
         <br>
     <% } %> 
