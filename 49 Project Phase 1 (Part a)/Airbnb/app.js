@@ -73,6 +73,13 @@ app.put("/listings/:id",async (req,res)=>{
     res.redirect("/listings");
 });
 
+// delete route
+app.delete("/listings/:id",async (req, res)=>{
+    let {id} = req.params;
+    await Listing.findByIdAndDelete(id);
+    res.redirect("/listings");
+})
+
 app.get("/",(req, res)=>{
     res.send("Hi im root! ");
 });
