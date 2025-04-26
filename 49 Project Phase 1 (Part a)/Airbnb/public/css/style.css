@@ -80,3 +80,8 @@ body {
 .add-btn,.btn {
     background-color: #fe424d !important;
 }
+
+/* Show page */
+.show-img {
+    height: 40vh;
+}
