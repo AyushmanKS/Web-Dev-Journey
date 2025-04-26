@@ -77,6 +77,6 @@ body {
     background-color: white;
 }
 
-.add-btn {
+.add-btn,.btn {
     background-color: #fe424d !important;
 }
