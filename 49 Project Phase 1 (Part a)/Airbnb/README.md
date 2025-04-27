@@ -71,16 +71,16 @@ Wanderlust/
 
    ```
    DATABASE_URL=your_mongodb_connection_string
-   PORT=3000
+   PORT=8080
    ```
 
 4. **Run the application**
    ```bash
-   npm start
+   nodemon app.js
    ```
 
 5. **Visit the app**  
-   Open your browser and navigate to: [http://localhost:3000](http://localhost:3000)
+   Open your browser and navigate to: [http://localhost:8080/listings](http://localhost:8080/listings)
 
 ---
 
@@ -130,7 +130,3 @@ This project is open-source and available under the [MIT License](LICENSE).
 - MDN Web Docs (HTML, CSS, JS)
 
 ---
-
-Would you also like me to prepare a **fancier version** with badges (like "Built with", "License", "Contributors welcome", etc.)? 🚀  
-It can make your GitHub repository look even cooler! 😎  
-Would you like that?
