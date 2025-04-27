@@ -84,16 +84,6 @@ Wanderlust/
 
 ---
 
-## 🖼️ Screenshots
-
-| Home Page | Add New Listing |
-| :---: | :---: |
-| ![Home Screenshot](link_to_image) | ![Add Listing Screenshot](link_to_image) |
-
-*(Add screenshots if available)*
-
----
-
 ## 📌 Future Enhancements
 
 - User authentication (login/signup)
@@ -114,12 +104,6 @@ If you'd like to contribute:
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
