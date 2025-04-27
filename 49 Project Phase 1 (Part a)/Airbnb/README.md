@@ -5,6 +5,8 @@
 Built using **HTML**, **CSS**, **JavaScript**, **Express.js**, and **MongoDB**, Wanderlust offers a seamless experience for travelers and hosts alike.
 
 ---
+![image](https://github.com/user-attachments/assets/effef83c-4386-4bf3-a9c2-1faa48c725de)
+
 
 ## 🚀 Features
 
@@ -16,6 +18,9 @@ Built using **HTML**, **CSS**, **JavaScript**, **Express.js**, and **MongoDB**, 
 - MongoDB database integration for persistent storage
 
 ---
+![image](https://github.com/user-attachments/assets/8cc2ba2c-0900-4a5d-813a-3c2812441e8c)
+![image](https://github.com/user-attachments/assets/f87fd73c-6458-4263-8591-533e15307ee0)
+
 
 ## 🛠 Tech Stack
 
