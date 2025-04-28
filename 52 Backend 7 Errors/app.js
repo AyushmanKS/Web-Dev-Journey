@@ -10,6 +10,10 @@ const checkToken = (req,res,next)=> {
     throw new ExpressError(401, "ACCESS DENIED");
 };
 
+app.get('/admin',(req,res)=>{
+    throw new ExpressError(403, "Access to admin is forbidden");
+});
+
 app.get("/api",checkToken,(req,res)=>{
     res.send("data");
 });
