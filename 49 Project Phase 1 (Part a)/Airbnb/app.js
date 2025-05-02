@@ -111,7 +111,8 @@ app.use((err, req, res, next) => {
     if (!Number.isInteger(statusCode)) {
         statusCode = 500;
     }
-    res.status(statusCode).send(message);
+    res.render("error.ejs", {message});
+    // res.status(statusCode).send(message);
 });
 
 app.listen(8080, ()=>{
