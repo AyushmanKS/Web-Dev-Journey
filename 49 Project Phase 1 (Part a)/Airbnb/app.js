@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const expressError = require("../Airbnb/utils/ExpressErrors.js");
+const {listingSchema} = require("./schema.js");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname, "views"));
@@ -61,9 +62,11 @@ app.get("/listings/:id",wrapAsync(async (req,res)=>{
 
 // Create route
 app.post("/listings",wrapAsync(async (req,res,next) => {
-    if(!req.body.listing) {
-        throw new expressError(400, "Send valid data for listing");
-    }
+    // if(!req.body.listing) {
+    //     throw new expressError(400, "Send valid data for listing");
+    // }
+    let result = listingSchema.validate(req.body);
+    console.log(result);
     const newListing = new Listing(req.body.listing);
     await newListing.save();
     res.redirect("/listings");
