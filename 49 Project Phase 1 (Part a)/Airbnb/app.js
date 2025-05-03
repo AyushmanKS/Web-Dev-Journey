@@ -56,7 +56,7 @@ const validateListing = (req, res, next) => {
         next();
     }
 }
-
+ 
 // new route
 app.get("/listings/new",(req,res)=>{    
     res.render("listings/new.ejs");
