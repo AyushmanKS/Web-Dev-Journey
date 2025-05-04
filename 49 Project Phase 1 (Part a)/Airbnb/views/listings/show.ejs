@@ -44,6 +44,15 @@
             </form>
         </div>
 
+        <br>
+        <div class="cols-8 offset-2">
+            <h4>All Reviews</h4>
+        <ul>
+            <% for(review of listing.reviews) { %> 
+                <li><%= review.comment %>,  <%= review.rating %></li>
+            <% } %>
+        </ul>
+        </div>
         </div>
         <br>
     </div>
