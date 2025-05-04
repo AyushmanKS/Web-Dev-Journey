@@ -50,6 +50,9 @@
         <ul>
             <% for(review of listing.reviews) { %> 
                 <li><%= review.comment %>,  <%= review.rating %></li>
+                <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                    <button class="btn btn-sm btn-dark">Delete</button>
+                </form>
             <% } %>
         </ul>
         </div>

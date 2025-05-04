@@ -126,6 +126,14 @@ app.post('/listings/:id/reviews',validateReview,wrapAsync(async (req, res)=> {
     res.redirect(`/listings/${listing._id}`);
 }));
 
+// reviews - delete
+app.delete('/listings/:id/reviews/:reviewId',wrapAsync (async(req,res)=> {
+    let {id,reviewId} = req.params;
+    await Listing.findByIdAndUpdate(id, {$pull: {reviews: reviewId}});
+    await review.findByIdAndDelete(reviewId);
+    res.redirect(`/listings/${id}`);
+}));
+
 app.get("/",(req, res)=>{
     res.send("Hi im root! ");
 });
