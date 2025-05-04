@@ -2,12 +2,13 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const Listing = require("../Airbnb/models/listing.js");
+const review = require("../Airbnb/models/review.js");
 const path = require("path"); 
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const expressError = require("../Airbnb/utils/ExpressErrors.js");
-const {listingSchema} = require("./schema.js");
+const {listingSchema, reviewSchema} = require("./schema.js");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname, "views"));
@@ -49,6 +50,16 @@ app.get("/listings",wrapAsync(async (req,res) => {
 
 const validateListing = (req, res, next) => {
     let {error} = listingSchema.validate(req.body);
+    if(error) {
+        throw new expressError(400, error);
+    }
+    else {
+        next();
+    }
+}
+
+const validateReview = (req, res, next) => {
+    let {error} = reviewSchema.validate(req.body);
     if(error) {
         throw new expressError(400, error);
     }
@@ -101,6 +112,19 @@ app.delete("/listings/:id",wrapAsync(async (req, res)=>{
     res.redirect("/listings");
   })
 );
+
+// reviews - post route
+app.post('/listings/:id/reviews',validateReview,wrapAsync(async (req, res)=> {
+    let listing = await Listing.findById(req.params.id);
+    let newReview = new review(req.body.review);
+
+    listing.reviews.push(newReview);
+
+    await newReview.save();
+    await listing.save();
+
+    res.redirect(`/listings/${listing._id}`);
+}));
 
 app.get("/",(req, res)=>{
     res.send("Hi im root! ");
