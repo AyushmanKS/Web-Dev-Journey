@@ -6,6 +6,7 @@ const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const expressError = require("../Airbnb/utils/ExpressErrors.js");
 const session = require("express-session");
+const flash = require("connect-flash");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname, "views"));
@@ -27,11 +28,6 @@ async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
 }
 
-// navigating through routes
-app.use("/listings",listings);
-// navigating through review routes
-app.use('/listings/:id/reviews',reviews);
-
 const sessionOptions = {
     secret : "mysupersecretcode",
     resave: false,
@@ -44,6 +40,17 @@ const sessionOptions = {
 };
 
 app.use(session(sessionOptions));
+app.use(flash());
+
+app.use((req,res,next)=> {
+    res.locals.success = req.flash("success");
+    next();
+});
+
+// navigating through routes
+app.use("/listings",listings);
+// navigating through review routes
+app.use('/listings/:id/reviews',reviews);
 
 app.get("/",(req, res)=>{
     res.send("Hi im root! ");
