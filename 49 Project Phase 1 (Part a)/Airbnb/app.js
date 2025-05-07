@@ -5,6 +5,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
 const expressError = require("../Airbnb/utils/ExpressErrors.js");
+const session = require("express-session");
 
 app.set("view engine","ejs");
 app.set("views",path.join(__dirname, "views"));
@@ -30,6 +31,14 @@ async function main() {
 app.use("/listings",listings);
 // navigating through review routes
 app.use('/listings/:id/reviews',reviews);
+
+const sessionOptions = {
+    secret : "mysupersecretcode",
+    resave: false,
+    saveUninitialized: true,
+};
+
+app.use(session(sessionOptions));
 
 app.get("/",(req, res)=>{
     res.send("Hi im root! ");
