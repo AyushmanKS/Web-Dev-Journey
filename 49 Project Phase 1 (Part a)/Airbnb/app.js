@@ -18,8 +18,9 @@ app.use(methodOverride("_method"));
 app.engine('ejs',ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
-const listings = require("./routes/listing.js");
-const reviews = require("./routes/review.js");
+const listingsRouter = require("./routes/listing.js");
+const reviewsRouter = require("./routes/review.js");
+const userRouter = require("./routes/user.js");
 
 main().then(()=> {
     console.log("Connected to DB");
@@ -68,9 +69,11 @@ app.get("/demouser",async (req,res)=>{
 });
 
 // navigating through routes
-app.use("/listings",listings);
+app.use("/listings",listingsRouter);
 // navigating through review routes
-app.use('/listings/:id/reviews',reviews);
+app.use('/listings/:id/reviews',reviewsRouter);
+// user router
+app.use("/",userRouter);
 
 app.get("/",(req, res)=>{
     res.send("Hi im root! ");
