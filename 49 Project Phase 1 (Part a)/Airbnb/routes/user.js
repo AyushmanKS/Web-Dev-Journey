@@ -33,4 +33,14 @@ router.post("/login",passport.authenticate("local",{failureRedirect: '/login', f
 
 });
 
+// logout route
+router.get("/logout",(req,res,next)=>{
+    req.logout((err)=> {
+        if(err) {
+            next(err);
+        } 
+        res.redirect("/listings");
+    });
+});
+
 module.exports = router;
