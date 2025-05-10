@@ -21,12 +21,14 @@
               </div>
         </div>
 
+        <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
         <div class="d-flex gap-2">
             <a href="/listings/<%= listing._id %>/edit" class="btn btn-dark col-1 offset-2">Edit</a>
             <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
                 <button class="btn btn-dark offset-2">Delete</button>
             </form>
         </div>
+        <% } %>
         
         <div class="cols-8 offset-2 ">
             <br>
