@@ -30,6 +30,8 @@
         </div>
         <% } %>
         
+
+        <% if(currUser) { %>
         <div class="cols-8 offset-2 ">
             <br>
             <h4>Leave a Review</h4>
@@ -46,8 +48,14 @@
                 <button class="btn btn-dark">Submit</button>
             </form>
         </div>
+        <% } else {%>
+            <div class="cols-8 offset-2">
+                <h4>Login to View and Leave a Review!</h4>
+            </div>
+        <% }%>
 
         <br>
+        <% if(currUser) { %>
         <div class="cols-8 offset-2">
             <h4>All Reviews</h4>
         <ul>
@@ -59,6 +67,7 @@
             <% } %>
         </ul>
         </div>
+        <% } %>
         </div>
         <br>
     </div>
